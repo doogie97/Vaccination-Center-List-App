@@ -12,3 +12,19 @@ struct ResponseResult {
     let response: URLResponse?
     let error: Error?
 }
+
+protocol URLSessionProtocol {
+    func customDataTask(request: URLRequest, completion: @escaping (ResponseResult) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol {
+    func customDataTask(request: URLRequest, completion: @escaping (ResponseResult) -> Void) -> URLSessionDataTask {
+        let dataTask = self.dataTask(with: request) { data, response, error in
+            completion(ResponseResult(data: data,
+                                      response: response,
+                                      error: error))
+        }
+        
+        return dataTask
+    }
+}
