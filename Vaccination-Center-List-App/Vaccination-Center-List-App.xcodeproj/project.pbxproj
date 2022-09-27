@@ -15,6 +15,7 @@
 		ACC7790F28E2DBA9000EDA2F /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7790E28E2DBA9000EDA2F /* URLSessionProtocol.swift */; };
 		ACC7791528E2DF76000EDA2F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7791428E2DF76000EDA2F /* HTTPMethod.swift */; };
 		ACC7791728E2DFA5000EDA2F /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7791628E2DFA5000EDA2F /* APIModel.swift */; };
+		ACC7791928E2E80C000EDA2F /* AppPrivacyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */; };
 		C554819C6FA15E8ABA4D491D /* Pods_Vaccination_Center_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		ACC7790E28E2DBA9000EDA2F /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		ACC7791428E2DF76000EDA2F /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		ACC7791628E2DFA5000EDA2F /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppPrivacyInfo.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				ACC7790228E2D58D000EDA2F /* Assets.xcassets */,
 				ACC7790428E2D58D000EDA2F /* LaunchScreen.storyboard */,
 				ACC7790728E2D58D000EDA2F /* Info.plist */,
+				ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */,
 			);
 			path = "Vaccination-Center-List-App";
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC7791928E2E80C000EDA2F /* AppPrivacyInfo.plist in Resources */,
 				ACC7790628E2D58D000EDA2F /* LaunchScreen.storyboard in Resources */,
 				ACC7790328E2D58D000EDA2F /* Assets.xcassets in Resources */,
 			);
