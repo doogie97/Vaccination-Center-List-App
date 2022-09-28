@@ -12,7 +12,3 @@ struct VaccinationsResult: Decodable {
         case data
     }
 }
-
-struct VaccinationInfo: Decodable {
-    
-}
