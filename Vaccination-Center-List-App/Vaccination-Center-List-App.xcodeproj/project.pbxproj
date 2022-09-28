@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACB9336728E4370A00AC462E /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9336628E4370A00AC462E /* DataDecoder.swift */; };
 		ACC4FC5A28E3D69500C6A9E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC5928E3D69500C6A9E1 /* NetworkManager.swift */; };
 		ACC4FC5E28E3F57500C6A9E1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC5D28E3F57500C6A9E1 /* APIError.swift */; };
 		ACC4FC6628E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC6528E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift */; };
@@ -40,6 +41,7 @@
 		47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vaccination_Center_List_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6087C3D8E0A80BE7D4CB91 /* Pods-Vaccination-Center-List-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vaccination-Center-List-App.release.xcconfig"; path = "Target Support Files/Pods-Vaccination-Center-List-App/Pods-Vaccination-Center-List-App.release.xcconfig"; sourceTree = "<group>"; };
 		7F028287D186C17ACF29158A /* Pods-Vaccination-Center-List-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vaccination-Center-List-App.debug.xcconfig"; path = "Target Support Files/Pods-Vaccination-Center-List-App/Pods-Vaccination-Center-List-App.debug.xcconfig"; sourceTree = "<group>"; };
+		ACB9336628E4370A00AC462E /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		ACC4FC5928E3D69500C6A9E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		ACC4FC5D28E3F57500C6A9E1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		ACC4FC6328E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vaccination-Center-List-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB9336428E430BE00AC462E /* API */,
+				ACB9336628E4370A00AC462E /* DataDecoder.swift */,
 				ACB9336528E430D600AC462E /* Error */,
 			);
 			path = Utill;
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB9336728E4370A00AC462E /* DataDecoder.swift in Sources */,
 				ACC7790F28E2DBA9000EDA2F /* URLSessionProtocol.swift in Sources */,
 				ACC778FE28E2D58C000EDA2F /* ViewController.swift in Sources */,
 				ACC7791C28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift in Sources */,
