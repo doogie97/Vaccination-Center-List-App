@@ -12,6 +12,7 @@
 		ACC4FC6628E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC6528E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift */; };
 		ACC4FC6E28E3FDD100C6A9E1 /* StubURLDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC6D28E3FDD100C6A9E1 /* StubURLDataTask.swift */; };
 		ACC4FC7028E3FE3600C6A9E1 /* StubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC6F28E3FE3600C6A9E1 /* StubURLSession.swift */; };
+		ACC4FC7228E400CF00C6A9E1 /* TestAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC7128E400CF00C6A9E1 /* TestAPIModel.swift */; };
 		ACC778FA28E2D58C000EDA2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC778F928E2D58C000EDA2F /* AppDelegate.swift */; };
 		ACC778FC28E2D58C000EDA2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC778FB28E2D58C000EDA2F /* SceneDelegate.swift */; };
 		ACC778FE28E2D58C000EDA2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC778FD28E2D58C000EDA2F /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		ACC4FC6528E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccination_Center_List_AppTests.swift; sourceTree = "<group>"; };
 		ACC4FC6D28E3FDD100C6A9E1 /* StubURLDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubURLDataTask.swift; sourceTree = "<group>"; };
 		ACC4FC6F28E3FE3600C6A9E1 /* StubURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubURLSession.swift; sourceTree = "<group>"; };
+		ACC4FC7128E400CF00C6A9E1 /* TestAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIModel.swift; sourceTree = "<group>"; };
 		ACC778F628E2D58C000EDA2F /* Vaccination-Center-List-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vaccination-Center-List-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC778F928E2D58C000EDA2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC778FB28E2D58C000EDA2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				ACC4FC6D28E3FDD100C6A9E1 /* StubURLDataTask.swift */,
 				ACC4FC6F28E3FE3600C6A9E1 /* StubURLSession.swift */,
+				ACC4FC7128E400CF00C6A9E1 /* TestAPIModel.swift */,
 			);
 			path = TestDouble;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC4FC7228E400CF00C6A9E1 /* TestAPIModel.swift in Sources */,
 				ACC4FC6E28E3FDD100C6A9E1 /* StubURLDataTask.swift in Sources */,
 				ACC4FC7028E3FE3600C6A9E1 /* StubURLSession.swift in Sources */,
 				ACC4FC6628E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift in Sources */,
