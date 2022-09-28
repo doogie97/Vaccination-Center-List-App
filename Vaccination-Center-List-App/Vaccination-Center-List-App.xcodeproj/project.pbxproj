@@ -88,6 +88,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ACB9336428E430BE00AC462E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				ACC7790E28E2DBA9000EDA2F /* URLSessionProtocol.swift */,
+				ACC4FC5928E3D69500C6A9E1 /* NetworkManager.swift */,
+				ACC7791628E2DFA5000EDA2F /* APIModel.swift */,
+				ACC7791428E2DF76000EDA2F /* HTTPMethod.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		ACB9336528E430D600AC462E /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4FC5D28E3F57500C6A9E1 /* APIError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		ACC4FC6428E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,11 +165,8 @@
 		ACC7790D28E2DB4D000EDA2F /* Utill */ = {
 			isa = PBXGroup;
 			children = (
-				ACC7790E28E2DBA9000EDA2F /* URLSessionProtocol.swift */,
-				ACC4FC5928E3D69500C6A9E1 /* NetworkManager.swift */,
-				ACC4FC5D28E3F57500C6A9E1 /* APIError.swift */,
-				ACC7791628E2DFA5000EDA2F /* APIModel.swift */,
-				ACC7791428E2DF76000EDA2F /* HTTPMethod.swift */,
+				ACB9336428E430BE00AC462E /* API */,
+				ACB9336528E430D600AC462E /* Error */,
 			);
 			path = Utill;
 			sourceTree = "<group>";
