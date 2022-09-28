@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>API KEY를 입력해 주세요</string>
+	<string>Please_enter_the_API-Key</string>
 </dict>
 </plist>
