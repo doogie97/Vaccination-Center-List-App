@@ -7,6 +7,10 @@
 
 final class Container {
     func mainViewController() -> MainViewController {
-        return MainViewController()
+        return MainViewController(viewModel: mainViewModel())
+    }
+    
+    private func mainViewModel() -> MainViewModelable {
+        return MainViewModel()
     }
 }
