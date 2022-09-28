@@ -14,4 +14,13 @@ struct NetworkManager {
         self.session = urlSession
     }
     
+    private func makeURL(api: APIable) -> URL? {
+        var component = URLComponents(string: api.host + api.path)
+        
+        component?.percentEncodedQueryItems = api.params?.compactMap {
+            URLQueryItem(name: $0.key, value: $0.value)
+        }
+        
+        return component?.url
+    }
 }
