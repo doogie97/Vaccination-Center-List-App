@@ -142,4 +142,39 @@ extension Vaccination_Center_List_AppTests {
         let jsonString = try? String(contentsOfFile: path ?? "")
         return jsonString?.data(using: .utf8) ?? Data()
     }
+    
+    func test_parse호출시_잘못된_data가_주어졌을경우_decodeError를_잘던지는지() {
+        //given
+        let data = dataFromJson(fileName: "wrongFileName")
+        let dataDecoder = DataDecoder()
+        
+        //when
+        do {
+            let _ = try dataDecoder.parse(data: data, resultType: VaccinationsResult.self)
+            XCTFail()
+        } catch let error {
+            guard let error = error as? APIError else {
+                XCTFail()
+                return
+            }
+            //then
+            XCTAssertEqual(error, APIError.decodeError)
+        }
+    }
+    
+    func test_parse호출시_testJSON이주어졌을경우_4번째index의_접종센터전화번호가_0536613955와일치하는지() {
+        //given
+        let data = dataFromJson(fileName: "testJSON")
+        let dataDecoder = DataDecoder()
+        
+        //when
+        do {
+            let vaccinationsResult = try dataDecoder.parse(data: data, resultType: VaccinationsResult.self)
+            let result = vaccinationsResult.data?[4].phoneNumber
+            //then
+            XCTAssertEqual(result, "053-661-3955")
+        } catch {
+            XCTFail()
+        }
+    }
 }
