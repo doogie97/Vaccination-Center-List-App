@@ -170,7 +170,7 @@ extension Vaccination_Center_List_AppTests {
         //when
         do {
             let vaccinationsResult = try dataDecoder.parse(data: data, resultType: VaccinationsResult.self)
-            let result = vaccinationsResult.data?[4].phoneNumber
+            let result = vaccinationsResult.data?[safe: 4]?.phoneNumber
             //then
             XCTAssertEqual(result, "053-661-3955")
         } catch {
