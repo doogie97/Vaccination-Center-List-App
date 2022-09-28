@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ACC4FC5A28E3D69500C6A9E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC5928E3D69500C6A9E1 /* NetworkManager.swift */; };
 		ACC4FC5E28E3F57500C6A9E1 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC5D28E3F57500C6A9E1 /* APIError.swift */; };
+		ACC4FC6628E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC4FC6528E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift */; };
 		ACC778FA28E2D58C000EDA2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC778F928E2D58C000EDA2F /* AppDelegate.swift */; };
 		ACC778FC28E2D58C000EDA2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC778FB28E2D58C000EDA2F /* SceneDelegate.swift */; };
 		ACC778FE28E2D58C000EDA2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC778FD28E2D58C000EDA2F /* ViewController.swift */; };
@@ -22,12 +23,24 @@
 		C554819C6FA15E8ABA4D491D /* Pods_Vaccination_Center_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ACC4FC6728E3FCF100C6A9E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACC778EE28E2D58C000EDA2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACC778F528E2D58C000EDA2F;
+			remoteInfo = "Vaccination-Center-List-App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vaccination_Center_List_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6087C3D8E0A80BE7D4CB91 /* Pods-Vaccination-Center-List-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vaccination-Center-List-App.release.xcconfig"; path = "Target Support Files/Pods-Vaccination-Center-List-App/Pods-Vaccination-Center-List-App.release.xcconfig"; sourceTree = "<group>"; };
 		7F028287D186C17ACF29158A /* Pods-Vaccination-Center-List-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vaccination-Center-List-App.debug.xcconfig"; path = "Target Support Files/Pods-Vaccination-Center-List-App/Pods-Vaccination-Center-List-App.debug.xcconfig"; sourceTree = "<group>"; };
 		ACC4FC5928E3D69500C6A9E1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		ACC4FC5D28E3F57500C6A9E1 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		ACC4FC6328E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vaccination-Center-List-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC4FC6528E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccination_Center_List_AppTests.swift; sourceTree = "<group>"; };
 		ACC778F628E2D58C000EDA2F /* Vaccination-Center-List-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vaccination-Center-List-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC778F928E2D58C000EDA2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACC778FB28E2D58C000EDA2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +56,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ACC4FC6028E3FCF100C6A9E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACC778F328E2D58C000EDA2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,10 +82,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ACC4FC6428E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACC4FC6528E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift */,
+			);
+			path = "Vaccination-Center-List-AppTests";
+			sourceTree = "<group>";
+		};
 		ACC778ED28E2D58C000EDA2F = {
 			isa = PBXGroup;
 			children = (
 				ACC778F828E2D58C000EDA2F /* Vaccination-Center-List-App */,
+				ACC4FC6428E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests */,
 				ACC778F728E2D58C000EDA2F /* Products */,
 				C1942937AFF58C0BDF56B97B /* Pods */,
 				33D0981AE268031143813860 /* Frameworks */,
@@ -76,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				ACC778F628E2D58C000EDA2F /* Vaccination-Center-List-App.app */,
+				ACC4FC6328E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +150,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ACC4FC6228E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACC4FC6B28E3FCF100C6A9E1 /* Build configuration list for PBXNativeTarget "Vaccination-Center-List-AppTests" */;
+			buildPhases = (
+				ACC4FC5F28E3FCF100C6A9E1 /* Sources */,
+				ACC4FC6028E3FCF100C6A9E1 /* Frameworks */,
+				ACC4FC6128E3FCF100C6A9E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACC4FC6828E3FCF100C6A9E1 /* PBXTargetDependency */,
+			);
+			name = "Vaccination-Center-List-AppTests";
+			productName = "Vaccination-Center-List-AppTests";
+			productReference = ACC4FC6328E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ACC778F528E2D58C000EDA2F /* Vaccination-Center-List-App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACC7790A28E2D58D000EDA2F /* Build configuration list for PBXNativeTarget "Vaccination-Center-List-App" */;
@@ -149,6 +197,10 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					ACC4FC6228E3FCF100C6A9E1 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = ACC778F528E2D58C000EDA2F;
+					};
 					ACC778F528E2D58C000EDA2F = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -168,11 +220,19 @@
 			projectRoot = "";
 			targets = (
 				ACC778F528E2D58C000EDA2F /* Vaccination-Center-List-App */,
+				ACC4FC6228E3FCF100C6A9E1 /* Vaccination-Center-List-AppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ACC4FC6128E3FCF100C6A9E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACC778F428E2D58C000EDA2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +288,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ACC4FC5F28E3FCF100C6A9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACC4FC6628E3FCF100C6A9E1 /* Vaccination_Center_List_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACC778F228E2D58C000EDA2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,6 +314,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		ACC4FC6828E3FCF100C6A9E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACC778F528E2D58C000EDA2F /* Vaccination-Center-List-App */;
+			targetProxy = ACC4FC6728E3FCF100C6A9E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		ACC7790428E2D58D000EDA2F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -258,6 +334,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ACC4FC6928E3FCF100C6A9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD8J3B58T9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Doogie.Vaccination-Center-List-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vaccination-Center-List-App.app/Vaccination-Center-List-App";
+			};
+			name = Debug;
+		};
+		ACC4FC6A28E3FCF100C6A9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD8J3B58T9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Doogie.Vaccination-Center-List-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vaccination-Center-List-App.app/Vaccination-Center-List-App";
+			};
+			name = Release;
+		};
 		ACC7790828E2D58D000EDA2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,6 +543,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ACC4FC6B28E3FCF100C6A9E1 /* Build configuration list for PBXNativeTarget "Vaccination-Center-List-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC4FC6928E3FCF100C6A9E1 /* Debug */,
+				ACC4FC6A28E3FCF100C6A9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ACC778F128E2D58C000EDA2F /* Build configuration list for PBXProject "Vaccination-Center-List-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
