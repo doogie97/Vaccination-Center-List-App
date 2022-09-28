@@ -8,8 +8,10 @@
 import XCTest
 @testable import Vaccination_Center_List_App
 
-final class Vaccination_Center_List_AppTests: XCTestCase {
+final class Vaccination_Center_List_AppTests: XCTestCase {}
+
 //MARK: NetworkManager 테스트
+extension Vaccination_Center_List_AppTests {
     //테스트를 위한 메서드
     func makeDummyData(data: Data?, statusCode: Int, error: Error?) -> ResponseResult {
         let response = HTTPURLResponse(url: URL(string: "test")!, statusCode: statusCode, httpVersion: "2", headerFields: nil)
@@ -128,5 +130,16 @@ final class Vaccination_Center_List_AppTests: XCTestCase {
         }
         
         wait(for: [promise], timeout: 5)
+    }
+}
+
+//MARK: DataDecoder 테스트
+extension Vaccination_Center_List_AppTests {
+    //테스트를 위한 메서드
+    func dataFromJson(fileName: String) -> Data {
+        let testBundle = Bundle(for: type(of: self))
+        let path = testBundle.path(forResource: fileName, ofType: "json")
+        let jsonString = try? String(contentsOfFile: path ?? "")
+        return jsonString?.data(using: .utf8) ?? Data()
     }
 }
