@@ -106,4 +106,27 @@ final class Vaccination_Center_List_AppTests: XCTestCase {
         
         wait(for: [promise], timeout: 5)
     }
+    
+    func test_request호출시_안녕_을_data로감싸전달할경우_정상적으로받아오는지() {
+        //given
+        let promise = expectation(description: "안녕을 잘 받아오는지")
+        let data = "안녕".data(using: .utf8)
+        let dummydata = makeDummyData(data: data, statusCode: 200, error: nil)
+        let networkManager = NetworkManager(urlSession: StubURLSession(dummyData: dummydata))
+        let testAPIModel = TestAPIModel(bookTitle: "", host: "", path: "", method: .get)
+        
+        //when
+        networkManager.request(api: testAPIModel) { result in
+            switch result {
+            case .success(let data):
+                let result = String(data: data, encoding: .utf8)
+                XCTAssertEqual(result, "안녕")
+                promise.fulfill()
+            case .failure(_):
+                XCTFail()
+            }
+        }
+        
+        wait(for: [promise], timeout: 5)
+    }
 }
