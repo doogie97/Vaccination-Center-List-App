@@ -11,4 +11,8 @@ protocol MainViewModelableInput {}
 
 protocol MainViewModelableOutput {}
 
-final class MainViewModel: MainViewModelable {}
+final class MainViewModel: MainViewModelable {
+    private let networkManager = NetworkManager()
+    private let decoder = DataDecoder()
+    
+}
