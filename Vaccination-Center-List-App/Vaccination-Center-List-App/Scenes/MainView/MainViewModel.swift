@@ -11,6 +11,7 @@ protocol MainViewModelable: MainViewModelableInput, MainViewModelableOutput {}
 
 protocol MainViewModelableInput {
     func getVaccinationsInfo()
+    func scrolledEndPoint()
 }
 
 protocol MainViewModelableOutput {
@@ -23,6 +24,7 @@ final class MainViewModel: MainViewModelable {
     private var page = 1
     private let perPage = 10
     
+    //in
     func getVaccinationsInfo() {
         let api = VaccinationAPIModel(page: page, perPage: perPage, method: .get)
         networkManager.request(api: api) { [weak self] result in
@@ -43,6 +45,11 @@ final class MainViewModel: MainViewModelable {
                 print(error) //추후 에러처리 필요
             }
         }
+    }
+    
+    func scrolledEndPoint() {
+        page += 1
+        getVaccinationsInfo()
     }
     
     //out
