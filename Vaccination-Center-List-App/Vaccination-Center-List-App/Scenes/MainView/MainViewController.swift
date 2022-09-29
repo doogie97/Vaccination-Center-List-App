@@ -42,6 +42,9 @@ final class MainViewController: UIViewController {
     private func setNavigation() {
         self.title = "예방접종센터 리스트"
         self.navigationController?.navigationBar.setBackgroundColor(color: .systemGray6)
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     private func bindView() {
