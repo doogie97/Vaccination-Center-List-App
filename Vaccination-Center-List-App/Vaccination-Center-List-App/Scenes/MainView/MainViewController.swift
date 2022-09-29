@@ -46,23 +46,23 @@ final class MainViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.listCollectionView.rx.prefetchItems
-            .bind(onNext: { [weak self] in
-                guard let listCount = self?.viewModel.vaccinations.value.count else {
-                    return
-                }
+            .withUnretained(self)
+            .bind(onNext: { owner, indexPath in
+                let listCount = owner.viewModel.vaccinations.value.count
                 
-                if $0.last?.row == listCount - 1 {
-                    self?.viewModel.scrolledEndPoint()
+                if indexPath.last?.row == listCount - 1 {
+                    owner.viewModel.scrolledEndPoint()
                 }
             })
             .disposed(by: disposeBag)
         
         refreshController.rx.controlEvent(.valueChanged)
-            .bind(onNext: { [weak self] in
-                self?.viewModel.reloadCollectionView()
+            .withUnretained(self)
+            .bind(onNext: { owner, _ in
+                owner.viewModel.reloadCollectionView()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self?.mainView.listCollectionView.refreshControl?.endRefreshing()
-                    self?.mainView.listCollectionView.setContentOffset(.zero, animated: true)
+                    owner.mainView.listCollectionView.refreshControl?.endRefreshing()
+                    owner.mainView.listCollectionView.setContentOffset(.zero, animated: true)
                 }
             })
             .disposed(by: disposeBag)
