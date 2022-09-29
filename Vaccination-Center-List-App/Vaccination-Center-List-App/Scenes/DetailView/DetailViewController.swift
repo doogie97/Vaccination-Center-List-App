@@ -28,5 +28,13 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = viewModel.vaccinationInfo.centerName
+        self.navigationItem.rightBarButtonItem = mapButton
     }
+    
+    private lazy var mapButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "지도"
+        
+        return button
+    }()
 }
