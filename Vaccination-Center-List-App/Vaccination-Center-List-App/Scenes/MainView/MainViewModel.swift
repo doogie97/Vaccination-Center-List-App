@@ -25,6 +25,16 @@ final class MainViewModel: MainViewModelable {
     private let perPage = 10
     
     //in
+    func scrolledEndPoint() {
+        page += 1
+        getVaccinationsInfo()
+    }
+    
+    //out
+    let vaccinations = BehaviorRelay<[VaccinationInfo]>(value: [])
+}
+
+extension MainViewModel {
     func getVaccinationsInfo() {
         let api = VaccinationAPIModel(page: page, perPage: perPage, method: .get)
         networkManager.request(api: api) { [weak self] result in
@@ -49,12 +59,4 @@ final class MainViewModel: MainViewModelable {
             }
         }
     }
-    
-    func scrolledEndPoint() {
-        page += 1
-        getVaccinationsInfo()
-    }
-    
-    //out
-    let vaccinations = BehaviorRelay<[VaccinationInfo]>(value: [])
 }
