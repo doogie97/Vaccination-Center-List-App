@@ -12,6 +12,7 @@ protocol MainViewModelable: MainViewModelableInput, MainViewModelableOutput {}
 protocol MainViewModelableInput {
     func viewDidLoad()
     func scrolledEndPoint()
+    func reloadCollectionView()
 }
 
 protocol MainViewModelableOutput {
@@ -31,6 +32,12 @@ final class MainViewModel: MainViewModelable {
     
     func scrolledEndPoint() {
         page += 1
+        getVaccinationsInfo()
+    }
+    
+    func reloadCollectionView() {
+        page = 1
+        vaccinations.accept([])
         getVaccinationsInfo()
     }
     
