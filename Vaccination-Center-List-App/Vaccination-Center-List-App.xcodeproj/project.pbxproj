@@ -32,6 +32,9 @@
 		ACC7791728E2DFA5000EDA2F /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7791628E2DFA5000EDA2F /* APIModel.swift */; };
 		ACC7791928E2E80C000EDA2F /* AppPrivacyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */; };
 		ACC7791C28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7791B28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift */; };
+		ACCA0CAB28E5A53100189D83 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA0CAA28E5A53100189D83 /* DetailViewController.swift */; };
+		ACCA0CAD28E5A54900189D83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA0CAC28E5A54900189D83 /* DetailView.swift */; };
+		ACCA0CAF28E5A55C00189D83 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA0CAE28E5A55C00189D83 /* DetailViewModel.swift */; };
 		ACCCB0AA28E51E9000839046 /* UINavigationBar + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */; };
 		ACCCB0AC28E5208300839046 /* VaccinationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */; };
 		C554819C6FA15E8ABA4D491D /* Pods_Vaccination_Center_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */; };
@@ -79,6 +82,9 @@
 		ACC7791628E2DFA5000EDA2F /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppPrivacyInfo.plist; sourceTree = "<group>"; };
 		ACC7791B28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VaccinationCenterListApp++Bundle.swift"; sourceTree = "<group>"; };
+		ACCA0CAA28E5A53100189D83 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ACCA0CAC28E5A54900189D83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		ACCA0CAE28E5A55C00189D83 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + Extension.swift"; sourceTree = "<group>"; };
 		ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB9338328E4597900AC462E /* MainView */,
+				ACCA0CA928E5A52000189D83 /* DetailView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -234,6 +241,16 @@
 				ACB9337F28E4586E00AC462E /* Extension */,
 			);
 			path = Utill;
+			sourceTree = "<group>";
+		};
+		ACCA0CA928E5A52000189D83 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				ACCA0CAC28E5A54900189D83 /* DetailView.swift */,
+				ACCA0CAA28E5A53100189D83 /* DetailViewController.swift */,
+				ACCA0CAE28E5A55C00189D83 /* DetailViewModel.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		C1942937AFF58C0BDF56B97B /* Pods */ = {
@@ -409,8 +426,11 @@
 				ACC7791C28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift in Sources */,
 				ACCCB0AC28E5208300839046 /* VaccinationListCell.swift in Sources */,
 				ACC4FC5E28E3F57500C6A9E1 /* APIError.swift in Sources */,
+				ACCA0CAB28E5A53100189D83 /* DetailViewController.swift in Sources */,
 				ACC778FA28E2D58C000EDA2F /* AppDelegate.swift in Sources */,
+				ACCA0CAF28E5A55C00189D83 /* DetailViewModel.swift in Sources */,
 				ACB9338528E459B400AC462E /* MainViewModel.swift in Sources */,
+				ACCA0CAD28E5A54900189D83 /* DetailView.swift in Sources */,
 				ACB9337328E43EC200AC462E /* VaccinationsResult.swift in Sources */,
 				ACB233D328E53F8000D6D6E0 /* String + Extension.swift in Sources */,
 				ACB9338128E4589B00AC462E /* Collection + Extension.swift in Sources */,
