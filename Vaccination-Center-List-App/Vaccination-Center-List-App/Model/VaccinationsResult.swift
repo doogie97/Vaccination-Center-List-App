@@ -6,9 +6,9 @@
 //
 
 struct VaccinationsResult: Decodable {
-    let data: [VaccinationInfo]?
+    let vaccinations: [VaccinationInfo]?
     
     private enum CodingKeys: String, CodingKey {
-        case data
+        case vaccinations = "data"
     }
 }

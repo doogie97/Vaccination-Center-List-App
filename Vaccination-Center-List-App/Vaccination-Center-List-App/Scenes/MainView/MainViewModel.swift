@@ -27,7 +27,7 @@ final class MainViewModel: MainViewModelable {
             switch result {
             case .success(let data):
                 do {
-                    guard let vaccinations = try self?.decoder.parse(data: data, resultType: VaccinationsResult.self).data else {
+                    guard let vaccinations = try self?.decoder.parse(data: data, resultType: VaccinationsResult.self).vaccinations else {
                         return
                     }
                     
