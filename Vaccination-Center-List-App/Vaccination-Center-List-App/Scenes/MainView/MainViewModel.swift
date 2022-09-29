@@ -31,7 +31,9 @@ final class MainViewModel: MainViewModelable {
                         return
                     }
                     
-                    self?.vaccinations.accept(vaccinations)
+                    self?.vaccinations.accept(vaccinations.sorted {
+                        ($0.updatedAt ?? "").toDate > ($1.updatedAt ?? "").toDate
+                    })
                 } catch {
                     
                 }
