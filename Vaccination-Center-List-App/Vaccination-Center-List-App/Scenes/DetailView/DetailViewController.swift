@@ -24,4 +24,9 @@ final class DetailViewController: UIViewController {
     override func loadView() {
         self.view = detailView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = viewModel.vaccinationInfo.centerName
+    }
 }
