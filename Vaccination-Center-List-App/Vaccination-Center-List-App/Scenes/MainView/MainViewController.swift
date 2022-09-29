@@ -22,6 +22,7 @@ final class MainViewController: UIViewController {
     }
     
     private let mainView = MainView()
+    private let refreshController = UIRefreshControl()
     private let disposeBag = DisposeBag()
     
     override func loadView() {
@@ -33,6 +34,8 @@ final class MainViewController: UIViewController {
         viewModel.viewDidLoad()
         title = "예방접종센터 리스트"
         navigationController?.navigationBar.setBackgroundColor(color: .systemGray6)
+        
+        mainView.listCollectionView.refreshControl = refreshController
         bindView()
     }
     
