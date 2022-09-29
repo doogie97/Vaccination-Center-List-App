@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 final class MainViewController: UIViewController {
     private let viewModel: MainViewModelable
@@ -31,6 +32,13 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         title = "예방접종센터 리스트"
         navigationController?.navigationBar.setBackgroundColor(color: .systemGray6)
+        bindView()
     }
     
+    private func bindView() {
+        viewModel.vaccinations.bind(to: mainView.listCollectionView.rx.items(cellIdentifier: "\(VaccinationListCell.self)", cellType: VaccinationListCell.self)){ index, vaccination, cell in
+            cell.setCellContents(vaccination: vaccination)
+        }
+            .disposed(by: disposeBag)
+    }
 }
