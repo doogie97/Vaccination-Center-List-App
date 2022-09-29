@@ -56,5 +56,15 @@ final class MainViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        refreshController.rx.controlEvent(.valueChanged)
+            .bind(onNext: { [weak self] in
+                self?.viewModel.reloadCollectionView()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self?.mainView.listCollectionView.refreshControl?.endRefreshing()
+                    self?.mainView.listCollectionView.setContentOffset(.zero, animated: true)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
