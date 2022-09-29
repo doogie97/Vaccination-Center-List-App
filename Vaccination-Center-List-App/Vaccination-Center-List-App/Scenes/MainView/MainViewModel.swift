@@ -10,7 +10,7 @@ import RxRelay
 protocol MainViewModelable: MainViewModelableInput, MainViewModelableOutput {}
 
 protocol MainViewModelableInput {
-    func getVaccinationsInfo()
+    func viewDidLoad()
     func scrolledEndPoint()
 }
 
@@ -25,6 +25,10 @@ final class MainViewModel: MainViewModelable {
     private let perPage = 10
     
     //in
+    func viewDidLoad() {
+        getVaccinationsInfo()
+    }
+    
     func scrolledEndPoint() {
         page += 1
         getVaccinationsInfo()
@@ -35,7 +39,7 @@ final class MainViewModel: MainViewModelable {
 }
 
 extension MainViewModel {
-    func getVaccinationsInfo() {
+    private func getVaccinationsInfo() {
         let api = VaccinationAPIModel(page: page, perPage: perPage, method: .get)
         networkManager.request(api: api) { [weak self] result in
             switch result {

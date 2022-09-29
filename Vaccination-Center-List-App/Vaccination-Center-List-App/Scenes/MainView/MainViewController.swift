@@ -30,7 +30,7 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getVaccinationsInfo()
+        viewModel.viewDidLoad()
         title = "예방접종센터 리스트"
         navigationController?.navigationBar.setBackgroundColor(color: .systemGray6)
         bindView()
