@@ -31,6 +31,7 @@
 		ACC7791728E2DFA5000EDA2F /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7791628E2DFA5000EDA2F /* APIModel.swift */; };
 		ACC7791928E2E80C000EDA2F /* AppPrivacyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */; };
 		ACC7791C28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7791B28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift */; };
+		ACCCB0AA28E51E9000839046 /* UINavigationBar + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */; };
 		C554819C6FA15E8ABA4D491D /* Pods_Vaccination_Center_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		ACC7791628E2DFA5000EDA2F /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppPrivacyInfo.plist; sourceTree = "<group>"; };
 		ACC7791B28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VaccinationCenterListApp++Bundle.swift"; sourceTree = "<group>"; };
+		ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB9338028E4589B00AC462E /* Collection + Extension.swift */,
+				ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				ACC7791728E2DFA5000EDA2F /* APIModel.swift in Sources */,
 				ACB9338928E45C6000AC462E /* Container.swift in Sources */,
 				ACB9338728E459BA00AC462E /* MainView.swift in Sources */,
+				ACCCB0AA28E51E9000839046 /* UINavigationBar + Extension.swift in Sources */,
 				ACC778FC28E2D58C000EDA2F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
