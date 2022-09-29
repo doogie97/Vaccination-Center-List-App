@@ -41,5 +41,17 @@ final class MainViewController: UIViewController {
             cell.setCellContents(vaccination: vaccination)
         }
             .disposed(by: disposeBag)
+        
+        mainView.listCollectionView.rx.prefetchItems
+            .bind(onNext: { [weak self] in
+                guard let listCount = self?.viewModel.vaccinations.value.count else {
+                    return
+                }
+                
+                if $0.last?.row == listCount - 1 {
+                    self?.viewModel.scrolledEndPoint()
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
