@@ -47,6 +47,13 @@ final class MainViewController: UIViewController {
         }
             .disposed(by: disposeBag)
         
+        mainView.listCollectionView.rx.itemSelected
+            .withUnretained(self)
+            .bind(onNext: { owner, indexPath in
+                owner.viewModel.touchCell(indexPath.row)
+            })
+            .disposed(by: disposeBag)
+        
         mainView.listCollectionView.rx.prefetchItems
             .withUnretained(self)
             .bind(onNext: { owner, indexPath in
