@@ -68,5 +68,14 @@ final class MainViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        viewModel.showDetailView
+            .withUnretained(self)
+            .bind(onNext: { owner, vaccinationInfo in
+                let detailVC = owner.container.detailViewController()
+                
+                owner.navigationController?.pushViewController(detailVC, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
