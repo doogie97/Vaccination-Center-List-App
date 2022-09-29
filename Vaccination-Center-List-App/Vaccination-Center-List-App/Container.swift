@@ -13,4 +13,12 @@ final class Container {
     private func mainViewModel() -> MainViewModelable {
         return MainViewModel()
     }
+    
+    func detailViewController() -> DetailViewController {
+        return DetailViewController(viewModel: detailViewModel())
+    }
+    
+    private func detailViewModel() -> DetailViewModelable {
+        return DetailViewModel()
+    }
 }
