@@ -32,6 +32,7 @@
 		ACC7791928E2E80C000EDA2F /* AppPrivacyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */; };
 		ACC7791C28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC7791B28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift */; };
 		ACCCB0AA28E51E9000839046 /* UINavigationBar + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */; };
+		ACCCB0AC28E5208300839046 /* VaccinationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */; };
 		C554819C6FA15E8ABA4D491D /* Pods_Vaccination_Center_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		ACC7791828E2E80C000EDA2F /* AppPrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppPrivacyInfo.plist; sourceTree = "<group>"; };
 		ACC7791B28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VaccinationCenterListApp++Bundle.swift"; sourceTree = "<group>"; };
 		ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + Extension.swift"; sourceTree = "<group>"; };
+		ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB9338628E459BA00AC462E /* MainView.swift */,
+				ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */,
 				ACC778FD28E2D58C000EDA2F /* MainViewController.swift */,
 				ACB9338428E459B400AC462E /* MainViewModel.swift */,
 			);
@@ -401,6 +404,7 @@
 				ACC778FE28E2D58C000EDA2F /* MainViewController.swift in Sources */,
 				ACB9337528E43F8A00AC462E /* VaccinationInfo.swift in Sources */,
 				ACC7791C28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift in Sources */,
+				ACCCB0AC28E5208300839046 /* VaccinationListCell.swift in Sources */,
 				ACC4FC5E28E3F57500C6A9E1 /* APIError.swift in Sources */,
 				ACC778FA28E2D58C000EDA2F /* AppDelegate.swift in Sources */,
 				ACB9338528E459B400AC462E /* MainViewModel.swift in Sources */,
