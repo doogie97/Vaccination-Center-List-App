@@ -17,6 +17,10 @@ final class VaccinationListCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private let titleFont = UIFont.preferredFont(forTextStyle: .caption1)
+    private let infoFont = UIFont.preferredFont(forTextStyle: .footnote)
+    private let titleColor = #colorLiteral(red: 0.4233665119, green: 0.4233665119, blue: 0.4233665119, alpha: 1)
+    
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [centerNameStackView,
                                                        facilityNameStackView,
@@ -28,106 +32,25 @@ final class VaccinationListCell: UICollectionViewCell {
         return stackView
     }()
     
-    private lazy var centerNameStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [centerNameTitleLabel, centerNameLabel])
-        centerNameTitleLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().multipliedBy(0.3)
-        }
-        
-        return stackView
-    }()
+    //centerName
+    private lazy var centerNameStackView = makeInfoStackView(subviews: [centerNameTitleLabel, centerNameLabel])
+    private lazy var centerNameTitleLabel = makeLabel(text: "센터명", font: titleFont, color: titleColor)
+    private lazy var centerNameLabel = makeLabel(font: infoFont)
     
-    private lazy var centerNameTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = #colorLiteral(red: 0.4233665119, green: 0.4233665119, blue: 0.4233665119, alpha: 1)
-        label.text = "센터명"
-        
-        return label
-    }()
+    //facilityName
+    private lazy var facilityNameStackView = makeInfoStackView(subviews: [facilityNameTitleLabel, facilityNameLabel])
+    private lazy var facilityNameTitleLabel = makeLabel(text: "건물명", font: titleFont, color: titleColor)
+    private lazy var facilityNameLabel = makeLabel(font: infoFont)
     
-    private lazy var centerNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
-        
-        return label
-    }()
+    //addsress
+    private lazy var addsressStackView = makeInfoStackView(subviews: [adsressTitleLabel, addressLabel])
+    private lazy var adsressTitleLabel = makeLabel(text: "주소", font: titleFont, color: titleColor)
+    private lazy var addressLabel = makeLabel(font: infoFont)
     
-    
-    private lazy var facilityNameStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [facilityNameTitleLabel, facilityNameLabel])
-        facilityNameTitleLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().multipliedBy(0.3)
-        }
-        
-        return stackView
-    }()
-    
-    private lazy var facilityNameTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = #colorLiteral(red: 0.4233665119, green: 0.4233665119, blue: 0.4233665119, alpha: 1)
-        label.text = "건물명"
-        
-        return label
-    }()
-    
-    private lazy var facilityNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
-        
-        return label
-    }()
-    
-    private lazy var addsressStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [adsressTitleLabel, addressLabel])
-        adsressTitleLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().multipliedBy(0.3)
-        }
-        
-        return stackView
-    }()
-    
-    private lazy var adsressTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = #colorLiteral(red: 0.4233665119, green: 0.4233665119, blue: 0.4233665119, alpha: 1)
-        label.text = "주소"
-        
-        return label
-    }()
-    
-    private lazy var addressLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
-        
-        return label
-    }()
-    
-    private lazy var updateAtStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [updateAtTitleLabel, updateAtLabel])
-        updateAtTitleLabel.snp.makeConstraints {
-            $0.width.equalToSuperview().multipliedBy(0.3)
-        }
-        
-        return stackView
-    }()
-    
-    private lazy var updateAtTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.textColor = #colorLiteral(red: 0.4233665119, green: 0.4233665119, blue: 0.4233665119, alpha: 1)
-        label.text = "업데이트 시간"
-        
-        return label
-    }()
-    
-    private lazy var updateAtLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
-        
-        return label
-    }()
+    //updateAt
+    private lazy var updateAtStackView = makeInfoStackView(subviews: [updateAtTitleLabel, updateAtLabel])
+    private lazy var updateAtTitleLabel = makeLabel(text: "업데이트 시간", font: titleFont, color: titleColor)
+    private lazy var updateAtLabel = makeLabel(font: infoFont)
     
     private lazy var underLineView: UIView = {
         let view = UIView()
@@ -135,6 +58,24 @@ final class VaccinationListCell: UICollectionViewCell {
         
         return view
     }()
+    
+    private func makeLabel(text: String = "", font: UIFont, color: UIColor = .label) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.font = font
+        label.textColor = color
+        
+        return label
+    }
+    
+    private func makeInfoStackView(subviews: [UIView]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: subviews)
+        subviews[safe: 0]?.snp.makeConstraints {
+            $0.width.equalToSuperview().multipliedBy(0.3)
+        }
+        
+        return stackView
+    }
     
     private func setLayout() {
         self.contentView.addSubview(mainStackView)
