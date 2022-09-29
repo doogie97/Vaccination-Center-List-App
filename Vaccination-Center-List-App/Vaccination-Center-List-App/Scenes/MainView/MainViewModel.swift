@@ -11,6 +11,7 @@ protocol MainViewModelable: MainViewModelableInput, MainViewModelableOutput {}
 
 protocol MainViewModelableInput {
     func viewDidLoad()
+    func touchCell(_ index: Int)
     func scrolledEndPoint()
     func reloadCollectionView()
 }
@@ -29,6 +30,14 @@ final class MainViewModel: MainViewModelable {
     //in
     func viewDidLoad() {
         getVaccinationsInfo()
+    }
+    
+    func touchCell(_ index: Int) {
+        guard let vaccnationInfo = vaccinations.value[safe: index] else {
+            return
+        }
+        
+        showDetailView.accept(vaccnationInfo)
     }
     
     func scrolledEndPoint() {
