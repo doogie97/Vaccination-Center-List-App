@@ -35,11 +35,14 @@ final class MainViewModel: MainViewModelable {
                         return
                     }
                     
-                    self?.vaccinations.accept(vaccinations.sorted {
+                    let oldVaccinations = self?.vaccinations.value ?? []
+                    let newVaccinations = oldVaccinations + vaccinations.sorted {
                         ($0.updatedAt ?? "").toDate > ($1.updatedAt ?? "").toDate
-                    })
-                } catch {
+                    }
                     
+                    self?.vaccinations.accept(newVaccinations)
+                } catch let error{
+                    print(error) //추후 에러처리 필요
                 }
             case .failure(let error):
                 print(error) //추후 에러처리 필요
