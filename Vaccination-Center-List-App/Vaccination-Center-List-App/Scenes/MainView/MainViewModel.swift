@@ -17,6 +17,7 @@ protocol MainViewModelableInput {
 
 protocol MainViewModelableOutput {
     var vaccinations: BehaviorRelay<[VaccinationInfo]> { get }
+    var showDetailView: PublishRelay<VaccinationInfo> { get }
 }
 
 final class MainViewModel: MainViewModelable {
@@ -43,6 +44,7 @@ final class MainViewModel: MainViewModelable {
     
     //out
     let vaccinations = BehaviorRelay<[VaccinationInfo]>(value: [])
+    let showDetailView = PublishRelay<VaccinationInfo>()
 }
 
 extension MainViewModel {
