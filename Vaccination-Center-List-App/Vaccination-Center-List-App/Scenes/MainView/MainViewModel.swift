@@ -20,9 +20,11 @@ protocol MainViewModelableOutput {
 final class MainViewModel: MainViewModelable {
     private let networkManager = NetworkManager()
     private let decoder = DataDecoder()
+    private var page = 1
+    private let perPage = 10
     
     func getVaccinationsInfo() {
-        let api = VaccinationAPIModel(page: 1, perPage: 10, method: .get)
+        let api = VaccinationAPIModel(page: page, perPage: perPage, method: .get)
         networkManager.request(api: api) { [weak self] result in
             switch result {
             case .success(let data):
@@ -42,6 +44,7 @@ final class MainViewModel: MainViewModelable {
             }
         }
     }
+    
     //out
     let vaccinations = BehaviorRelay<[VaccinationInfo]>(value: [])
 }
