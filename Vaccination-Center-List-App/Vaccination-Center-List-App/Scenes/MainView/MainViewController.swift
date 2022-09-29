@@ -85,7 +85,7 @@ final class MainViewController: UIViewController {
         viewModel.showDetailView
             .withUnretained(self)
             .bind(onNext: { owner, vaccinationInfo in
-                let detailVC = owner.container.detailViewController()
+                let detailVC = owner.container.detailViewController(vaccinationInfo: vaccinationInfo)
                 
                 owner.navigationController?.pushViewController(detailVC, animated: true)
             })

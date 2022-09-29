@@ -14,11 +14,11 @@ final class Container {
         return MainViewModel()
     }
     
-    func detailViewController() -> DetailViewController {
-        return DetailViewController(viewModel: detailViewModel())
+    func detailViewController(vaccinationInfo: VaccinationInfo) -> DetailViewController {
+        return DetailViewController(viewModel: detailViewModel(vaccinationInfo: vaccinationInfo))
     }
     
-    private func detailViewModel() -> DetailViewModelable {
-        return DetailViewModel()
+    private func detailViewModel(vaccinationInfo: VaccinationInfo) -> DetailViewModelable {
+        return DetailViewModel(vaccinationInfo: vaccinationInfo)
     }
 }

@@ -9,6 +9,15 @@ protocol DetailViewModelable: DetailViewModelInput, DetailViewModelOutput {}
 
 protocol DetailViewModelInput {}
 
-protocol DetailViewModelOutput {}
+protocol DetailViewModelOutput {
+    var vaccinationInfo: VaccinationInfo { get }
+}
 
-final class DetailViewModel: DetailViewModelable {}
+final class DetailViewModel: DetailViewModelable {
+    init(vaccinationInfo: VaccinationInfo) {
+        self.vaccinationInfo = vaccinationInfo
+    }
+    
+    //out
+    let vaccinationInfo: VaccinationInfo
+}
