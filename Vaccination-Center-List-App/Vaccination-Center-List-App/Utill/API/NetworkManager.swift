@@ -24,22 +24,24 @@ struct NetworkManager {
         request.httpMethod = api.method.string
         
         let dataTask = session.customDataTask(request: request) { responseResult in
-            guard responseResult.error == nil else {
-                completion(.failure(.transportError))
-                return
+            DispatchQueue.main.async {
+                guard responseResult.error == nil else {
+                    completion(.failure(.transportError))
+                    return
+                }
+                
+                guard let response = responseResult.response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                    completion(.failure(.responseError))
+                    return
+                }
+                
+                guard let data = responseResult.data else {
+                    completion(.failure(.dataError))
+                    return
+                }
+                
+                completion(.success(data))
             }
-            
-            guard let response = responseResult.response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                completion(.failure(.responseError))
-                return
-            }
-            
-            guard let data = responseResult.data else {
-                completion(.failure(.dataError))
-                return
-            }
-            
-            completion(.success(data))
         }
         
         dataTask.resume()
