@@ -8,6 +8,22 @@
 import SnapKit
 
 final class DetailView: UIView {
+    
+    private lazy var centerNameView = makeSectionView(imageName: "hospital", titleText: "센터명", descriptionLabel: centerNameLabel)
+    private lazy var centerNameLabel = makeDescriptionLabel()
+    
+    private lazy var facilityNameView = makeSectionView(imageName: "building", titleText: "건물명", descriptionLabel: facilityNameLabel)
+    private lazy var facilityNameLabel = makeDescriptionLabel()
+    
+    private lazy var phoneNumberView = makeSectionView(imageName: "telephone", titleText: "전화번호", descriptionLabel: phoneNumberLabel)
+    private lazy var phoneNumberLabel = makeDescriptionLabel()
+    
+    private lazy var updatedAtView = makeSectionView(imageName: "chat", titleText: "업데이트 시간", descriptionLabel: updatedAtLabel)
+    private lazy var updatedAtLabel = makeDescriptionLabel()
+    
+    private lazy var addressView = makeSectionView(imageName: "placeholder", titleText: "주소", descriptionLabel: addressLabel)
+    private lazy var addressLabel = makeDescriptionLabel()
+    
     private func makeSectionView(imageName: String, titleText: String, descriptionLabel: UILabel) -> UIView {
         let imageView = UIImageView(image: UIImage(named: imageName))
         imageView.contentMode = .scaleAspectFit
