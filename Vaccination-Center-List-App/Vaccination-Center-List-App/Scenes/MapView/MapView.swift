@@ -68,4 +68,12 @@ final class MapView: UIView {
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(32)
         }
     }
+    
+    func setLocationPin(location: CLLocationCoordinate2D, title: String) {
+        let pin = MKPointAnnotation()
+        pin.coordinate = location
+        pin.title = title
+        
+        mapView.addAnnotation(pin)
+    }
 }
