@@ -28,6 +28,8 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
+        mapView.setLocationPin(location: viewModel.location, title: viewModel.centerName)
+        mapView.moveLoaction(location: viewModel.location)
     }
     
     private func setNavigation() {
