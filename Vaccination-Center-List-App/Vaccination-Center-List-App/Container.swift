@@ -22,11 +22,11 @@ final class Container {
         return DetailViewModel(vaccinationInfo: vaccinationInfo)
     }
     
-    func mapViewController() -> MapViewController {
-        return MapViewController(viewModel: mapViewModel())
+    func mapViewController(vaccinationInfo: VaccinationInfo) -> MapViewController {
+        return MapViewController(viewModel: mapViewModel(vaccinationInfo: vaccinationInfo))
     }
     
-    private func mapViewModel() -> MapViewModelable {
-        return MapViewModel()
+    private func mapViewModel(vaccinationInfo: VaccinationInfo) -> MapViewModelable {
+        return MapViewModel(vaccinationInfo: vaccinationInfo)
     }
 }

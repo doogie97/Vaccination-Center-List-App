@@ -15,7 +15,7 @@ protocol DetailViewModelInput {
 
 protocol DetailViewModelOutput {
     var vaccinationInfo: VaccinationInfo { get }
-    var showMapView: PublishRelay<Void> { get }
+    var showMapView: PublishRelay<VaccinationInfo> { get }
 }
 
 final class DetailViewModel: DetailViewModelable {
@@ -25,10 +25,10 @@ final class DetailViewModel: DetailViewModelable {
     
     //in
     func touchMapButton() {
-        showMapView.accept(())
+        showMapView.accept(vaccinationInfo)
     }
     
     //out
     let vaccinationInfo: VaccinationInfo
-    let showMapView = PublishRelay<Void>()
+    let showMapView = PublishRelay<VaccinationInfo>()
 }

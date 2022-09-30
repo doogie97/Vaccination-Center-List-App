@@ -50,8 +50,8 @@ final class DetailViewController: UIViewController {
         
         viewModel.showMapView
             .withUnretained(self)
-            .bind { owner, _ in
-                let mapVC = owner.container.mapViewController()
+            .bind { owner, vaccinationInfo in
+                let mapVC = owner.container.mapViewController(vaccinationInfo: vaccinationInfo)
                 
                 owner.navigationController?.pushViewController(mapVC, animated: true)
             }

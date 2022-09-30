@@ -12,3 +12,6 @@ protocol MapViewModelInput {}
 protocol MapViewModelOutput {}
 
 final class MapViewModel: MapViewModelable {}
+final class MapViewModel: MapViewModelable {
+    init(vaccinationInfo: VaccinationInfo) {
+    }
