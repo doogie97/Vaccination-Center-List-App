@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import RxRelay
 
 protocol MapViewModelable: MapViewModelInput, MapViewModelOutput {}
 
@@ -14,6 +15,7 @@ protocol MapViewModelInput {}
 protocol MapViewModelOutput {
     var centerName: String { get }
     var location: CLLocationCoordinate2D { get }
+    var moveToLocation: PublishRelay<CLLocationCoordinate2D> { get }
 }
 
 final class MapViewModel: MapViewModelable {
@@ -29,4 +31,5 @@ final class MapViewModel: MapViewModelable {
     //output
     let centerName: String
     let location: CLLocationCoordinate2D
+    var moveToLocation = PublishRelay<CLLocationCoordinate2D>()
 }
