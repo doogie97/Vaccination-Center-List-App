@@ -12,6 +12,7 @@ protocol MapViewModelable: MapViewModelInput, MapViewModelOutput {}
 
 protocol MapViewModelInput {
     func touchToVaccinationButton()
+    func touchToCurrentLocationButton()
 }
 
 protocol MapViewModelOutput {
@@ -31,6 +32,10 @@ final class MapViewModel: MapViewModelable {
     //in
     func touchToVaccinationButton() {
         moveToLocation.accept(location)
+    }
+    
+    func touchToCurrentLocationButton() {
+        
     }
     
     //output
