@@ -44,6 +44,8 @@ final class DetailView: UIView {
         let view = UIView()
         view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 10
+        view.layer.shadowOpacity = 0.1
+        view.layer.shadowOffset = CGSize(width: 8, height: 8)
         
         view.addSubview(imageView)
         view.addSubview(titleTextLabel)
