@@ -9,7 +9,9 @@ import RxRelay
 
 protocol DetailViewModelable: DetailViewModelInput, DetailViewModelOutput {}
 
-protocol DetailViewModelInput {}
+protocol DetailViewModelInput {
+    func touchMapButton()
+}
 
 protocol DetailViewModelOutput {
     var vaccinationInfo: VaccinationInfo { get }
@@ -19,6 +21,11 @@ protocol DetailViewModelOutput {
 final class DetailViewModel: DetailViewModelable {
     init(vaccinationInfo: VaccinationInfo) {
         self.vaccinationInfo = vaccinationInfo
+    }
+    
+    //in
+    func touchMapButton() {
+        showMapView.accept(())
     }
     
     //out
