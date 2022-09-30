@@ -5,7 +5,7 @@
 //  Created by 최최성균 on 2022/09/29.
 //
 
-import UIKit
+import RxSwift
 
 final class DetailViewController: UIViewController {
     private let viewModel: DetailViewModelable
@@ -22,6 +22,7 @@ final class DetailViewController: UIViewController {
     }
     
     private let detailView = DetailView()
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         self.view = detailView
@@ -31,11 +32,24 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
         setNavigation()
         detailView.setViewContents(vaccinationInfo: viewModel.vaccinationInfo)
+        bindView()
     }
     
     private func setNavigation() {
         self.title = viewModel.vaccinationInfo.centerName
         self.navigationItem.rightBarButtonItem = mapButton
+    }
+    
+    private func bindView() {
+        
+        viewModel.showMapView
+            .withUnretained(self)
+            .bind { owner, _ in
+                let mapVC = owner.container.mapViewController()
+                
+                owner.navigationController?.pushViewController(mapVC, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private lazy var mapButton: UIBarButtonItem = {
