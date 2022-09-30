@@ -16,6 +16,7 @@ final class DetailView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    private let sectionHeight = UIScreen.main.bounds.width * 0.45
     
     private lazy var centerNameView = makeSectionView(imageName: "hospital", titleText: "센터명", descriptionLabel: centerNameLabel)
     private lazy var centerNameLabel = makeDescriptionLabel()
@@ -93,34 +94,34 @@ final class DetailView: UIView {
             $0.top.equalTo(safeAreaLayoutGuide).inset(16)
             $0.leading.equalTo(safeAreaLayoutGuide).inset(20)
             $0.trailing.equalTo(safeAreaLayoutGuide).multipliedBy(0.5).inset(20)
-            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+            $0.height.equalTo(sectionHeight)
         }
         
         facilityNameView.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).inset(16)
             $0.leading.equalTo(centerNameView.snp.trailing).offset(40)
             $0.trailing.equalTo(safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+            $0.height.equalTo(sectionHeight)
         }
         
         phoneNumberView.snp.makeConstraints {
             $0.top.equalTo(centerNameView.snp.bottom).offset(24)
             $0.leading.equalTo(safeAreaLayoutGuide).inset(20)
             $0.trailing.equalTo(safeAreaLayoutGuide).multipliedBy(0.5).inset(20)
-            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+            $0.height.equalTo(sectionHeight)
         }
         
         updatedAtView.snp.makeConstraints {
             $0.top.equalTo(facilityNameView.snp.bottom).offset(24)
             $0.leading.equalTo(phoneNumberView.snp.trailing).offset(40)
             $0.trailing.equalTo(safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+            $0.height.equalTo(sectionHeight)
         }
         
         addressView.snp.makeConstraints {
             $0.top.equalTo(updatedAtView.snp.bottom).offset(24)
             $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+            $0.height.equalTo(sectionHeight)
         }
     }
     
