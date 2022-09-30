@@ -5,12 +5,15 @@
 //  Created by 최최성균 on 2022/09/29.
 //
 
+import RxRelay
+
 protocol DetailViewModelable: DetailViewModelInput, DetailViewModelOutput {}
 
 protocol DetailViewModelInput {}
 
 protocol DetailViewModelOutput {
     var vaccinationInfo: VaccinationInfo { get }
+    var showMapView: PublishRelay<Void> { get }
 }
 
 final class DetailViewModel: DetailViewModelable {
@@ -20,4 +23,5 @@ final class DetailViewModel: DetailViewModelable {
     
     //out
     let vaccinationInfo: VaccinationInfo
+    let showMapView = PublishRelay<Void>()
 }
