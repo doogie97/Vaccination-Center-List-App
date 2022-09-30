@@ -38,12 +38,32 @@ final class MainView: UIView {
         return collectionView
     }()
     
+    private let buttonHeight = UIScreen.main.bounds.width / 9
+    
+    private(set) lazy var scrollToTopButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBackground
+        button.setImage(UIImage(named:"top-alignment"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+        button.layer.cornerRadius = CGFloat(buttonHeight / 2)
+        button.setShadow(offset: .zero, width: buttonHeight, height: buttonHeight)
+        
+        return button
+    }()
+    
     private func setLayout() {
         self.backgroundColor = .systemBackground
         self.addSubview(listCollectionView)
+        self.addSubview(scrollToTopButton)
 
         listCollectionView.snp.makeConstraints {
             $0.edges.equalTo(safeAreaLayoutGuide)
+        }
+        
+        scrollToTopButton.snp.makeConstraints {
+            $0.height.width.equalTo(buttonHeight)
+            $0.trailing.equalToSuperview().inset(40)
+            $0.bottom.equalToSuperview().inset(60)
         }
     }
 }
