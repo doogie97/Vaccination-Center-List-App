@@ -24,7 +24,7 @@ final class MapView: UIView {
         return mapView
     }()
     
-    private(set) lazy var tonowbutton: UIButton = {
+    private(set) lazy var toCurrentLocationButton: UIButton = {
         let button = UIButton()
         button.setTitle("현재위치로", for: .normal)
         button.backgroundColor = .systemBlue
@@ -50,7 +50,7 @@ final class MapView: UIView {
     
     private func setLayout() {
         self.addSubview(mapView)
-        self.addSubview(tonowbutton)
+        self.addSubview(toCurrentLocationButton)
         self.addSubview(toVaccinationButton)
         
         mapView.snp.makeConstraints {
@@ -58,7 +58,7 @@ final class MapView: UIView {
             $0.bottom.equalToSuperview()
         }
         
-        tonowbutton.snp.makeConstraints {
+        toCurrentLocationButton.snp.makeConstraints {
             $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
             $0.bottom.equalTo(toVaccinationButton.snp.top).inset(-8)
         }
