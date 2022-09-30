@@ -5,7 +5,7 @@
 //  Created by 최최성균 on 2022/09/30.
 //
 
-import UIKit
+import RxSwift
 
 final class MapViewController: UIViewController {
     private let viewModel: MapViewModelable
@@ -20,6 +20,7 @@ final class MapViewController: UIViewController {
     }
     
     private let mapView = MapView()
+    private let diseposeBag = DisposeBag()
     
     override func loadView() {
         self.view = mapView
@@ -28,8 +29,18 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
+        bindView()
         mapView.setLocationPin(location: viewModel.location, title: viewModel.centerName)
         mapView.moveLoaction(location: viewModel.location)
+    }
+    
+        
+        viewModel.moveToLocation
+            .withUnretained(self)
+            .bind(onNext: {owner, location in
+                owner.mapView.moveLoaction(location: location)
+            })
+            .disposed(by: diseposeBag)
     }
     
     private func setNavigation() {
