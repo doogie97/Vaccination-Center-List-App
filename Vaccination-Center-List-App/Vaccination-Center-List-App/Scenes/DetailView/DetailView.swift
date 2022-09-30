@@ -8,6 +8,14 @@
 import SnapKit
 
 final class DetailView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var centerNameView = makeSectionView(imageName: "hospital", titleText: "센터명", descriptionLabel: centerNameLabel)
     private lazy var centerNameLabel = makeDescriptionLabel()
@@ -69,4 +77,49 @@ final class DetailView: UIView {
         label.font = UIFont.preferredFont(forTextStyle: .footnote)
         return label
     }
+    
+    private func setLayout() {
+        self.backgroundColor = .systemGray5
+        
+        self.addSubview(centerNameView)
+        self.addSubview(facilityNameView)
+        self.addSubview(phoneNumberView)
+        self.addSubview(updatedAtView)
+        self.addSubview(addressView)
+        
+        centerNameView.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).inset(16)
+            $0.leading.equalTo(safeAreaLayoutGuide).inset(20)
+            $0.trailing.equalTo(safeAreaLayoutGuide).multipliedBy(0.5).inset(20)
+            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+        }
+        
+        facilityNameView.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide).inset(16)
+            $0.leading.equalTo(centerNameView.snp.trailing).offset(40)
+            $0.trailing.equalTo(safeAreaLayoutGuide).inset(20)
+            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+        }
+        
+        phoneNumberView.snp.makeConstraints {
+            $0.top.equalTo(centerNameView.snp.bottom).offset(24)
+            $0.leading.equalTo(safeAreaLayoutGuide).inset(20)
+            $0.trailing.equalTo(safeAreaLayoutGuide).multipliedBy(0.5).inset(20)
+            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+        }
+        
+        updatedAtView.snp.makeConstraints {
+            $0.top.equalTo(facilityNameView.snp.bottom).offset(24)
+            $0.leading.equalTo(phoneNumberView.snp.trailing).offset(40)
+            $0.trailing.equalTo(safeAreaLayoutGuide).inset(20)
+            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+        }
+        
+        addressView.snp.makeConstraints {
+            $0.top.equalTo(updatedAtView.snp.bottom).offset(24)
+            $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(20)
+            $0.height.equalTo(UIScreen.main.bounds.width * 0.45)
+        }
+    }
+    
 }
