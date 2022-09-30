@@ -41,6 +41,12 @@ final class DetailViewController: UIViewController {
     }
     
     private func bindView() {
+        mapButton.rx.tap
+            .withUnretained(self)
+            .bind { owner, _ in
+                owner.viewModel.touchMapButton()
+            }
+            .disposed(by: disposeBag)
         
         viewModel.showMapView
             .withUnretained(self)
