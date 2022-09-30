@@ -24,4 +24,14 @@ final class MapViewController: UIViewController {
     override func loadView() {
         self.view = mapView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setNavigation()
+    }
+    
+    private func setNavigation() {
+        self.title = "지도"
+        self.navigationItem.leftBarButtonItem?.title = "Back"
+    }
 }
