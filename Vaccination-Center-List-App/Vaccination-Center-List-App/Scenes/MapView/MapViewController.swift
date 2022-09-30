@@ -34,6 +34,13 @@ final class MapViewController: UIViewController {
         mapView.moveLoaction(location: viewModel.location)
     }
     
+    private func bindView() {
+        mapView.toVaccinationButton.rx.tap
+            .withUnretained(self)
+            .bind(onNext: { owner, _ in
+                owner.viewModel.touchToVaccinationButton()
+            })
+            .disposed(by: diseposeBag)
         
         viewModel.moveToLocation
             .withUnretained(self)
