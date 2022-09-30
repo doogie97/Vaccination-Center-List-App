@@ -122,4 +122,11 @@ final class DetailView: UIView {
         }
     }
     
+    func setViewContents(vaccinationInfo: VaccinationInfo) {
+        centerNameLabel.text = vaccinationInfo.centerName
+        facilityNameLabel.text = vaccinationInfo.facilityName
+        phoneNumberLabel.text = vaccinationInfo.phoneNumber
+        updatedAtLabel.text = vaccinationInfo.updatedAt
+        addressLabel.text = vaccinationInfo.address
+    }
 }

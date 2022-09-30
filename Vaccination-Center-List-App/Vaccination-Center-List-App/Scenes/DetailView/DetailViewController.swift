@@ -28,6 +28,7 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
+        detailView.setViewContents(vaccinationInfo: viewModel.vaccinationInfo)
     }
     
     private func setNavigation() {
