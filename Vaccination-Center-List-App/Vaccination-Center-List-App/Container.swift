@@ -15,7 +15,7 @@ final class Container {
     }
     
     func detailViewController(vaccinationInfo: VaccinationInfo) -> DetailViewController {
-        return DetailViewController(viewModel: detailViewModel(vaccinationInfo: vaccinationInfo))
+        return DetailViewController(viewModel: detailViewModel(vaccinationInfo: vaccinationInfo), container: self)
     }
     
     private func detailViewModel(vaccinationInfo: VaccinationInfo) -> DetailViewModelable {

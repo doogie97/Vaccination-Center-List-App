@@ -9,9 +9,11 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     private let viewModel: DetailViewModelable
+    private let container: Container
     
-    init(viewModel: DetailViewModelable) {
+    init(viewModel: DetailViewModelable, container: Container) {
         self.viewModel = viewModel
+        self.container = container
         super.init(nibName: nil, bundle: nil)
     }
     
