@@ -10,7 +10,9 @@ import RxRelay
 
 protocol MapViewModelable: MapViewModelInput, MapViewModelOutput {}
 
-protocol MapViewModelInput {}
+protocol MapViewModelInput {
+    func touchToVaccinationButton()
+}
 
 protocol MapViewModelOutput {
     var centerName: String { get }
@@ -26,6 +28,9 @@ final class MapViewModel: MapViewModelable {
         self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
+    //in
+    func touchToVaccinationButton() {
+        moveToLocation.accept(location)
     }
     
     //output
