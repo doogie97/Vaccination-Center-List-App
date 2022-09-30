@@ -18,22 +18,31 @@ final class DetailView: UIView {
     }
     private let sectionHeight = UIScreen.main.bounds.width * 0.45
     
+    //centerName
     private lazy var centerNameView = makeSectionView(imageName: "hospital", titleText: "센터명", descriptionLabel: centerNameLabel)
     private lazy var centerNameLabel = makeDescriptionLabel()
     
+    //facilityName
     private lazy var facilityNameView = makeSectionView(imageName: "building", titleText: "건물명", descriptionLabel: facilityNameLabel)
     private lazy var facilityNameLabel = makeDescriptionLabel()
     
+    //phoneNumber
     private lazy var phoneNumberView = makeSectionView(imageName: "telephone", titleText: "전화번호", descriptionLabel: phoneNumberLabel)
     private lazy var phoneNumberLabel = makeDescriptionLabel()
     
+    //updatedAt
     private lazy var updatedAtView = makeSectionView(imageName: "chat", titleText: "업데이트 시간", descriptionLabel: updatedAtLabel)
     private lazy var updatedAtLabel = makeDescriptionLabel()
     
-    private lazy var addressView = makeSectionView(imageName: "placeholder", titleText: "주소", descriptionLabel: addressLabel)
+    //address
+    private lazy var addressView = makeSectionView(imageName: "placeholder",
+                                                   titleText: "주소",
+                                                   descriptionLabel: addressLabel,
+                                                   shwdowWith: sectionHeight * 2.15)
     private lazy var addressLabel = makeDescriptionLabel()
     
-    private func makeSectionView(imageName: String, titleText: String, descriptionLabel: UILabel) -> UIView {
+    //make methods
+    private func makeSectionView(imageName: String, titleText: String, descriptionLabel: UILabel, shwdowWith: CGFloat? = nil) -> UIView {
         let imageView = UIImageView(image: UIImage(named: imageName))
         imageView.contentMode = .scaleAspectFit
         
@@ -45,9 +54,8 @@ final class DetailView: UIView {
         let view = UIView()
         view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 10
-        view.layer.shadowOpacity = 0.1
-        view.layer.shadowOffset = CGSize(width: 8, height: 8)
-        
+        view.setShadow(offset: CGSize(width: 0, height: 15), width: shwdowWith ?? sectionHeight, height: sectionHeight)
+
         view.addSubview(imageView)
         view.addSubview(titleTextLabel)
         view.addSubview(descriptionLabel)
@@ -81,6 +89,7 @@ final class DetailView: UIView {
         return label
     }
     
+    //setting
     private func setLayout() {
         self.backgroundColor = .systemGray5
         
