@@ -42,6 +42,13 @@ final class MapViewController: UIViewController {
             })
             .disposed(by: diseposeBag)
         
+        mapView.toCurrentLocationButton.rx.tap
+            .withUnretained(self)
+            .bind(onNext: { owner, _ in
+                owner.viewModel.touchToCurrentLocationButton()
+            })
+            .disposed(by: diseposeBag)
+        
         viewModel.moveToLocation
             .withUnretained(self)
             .bind(onNext: {owner, location in
