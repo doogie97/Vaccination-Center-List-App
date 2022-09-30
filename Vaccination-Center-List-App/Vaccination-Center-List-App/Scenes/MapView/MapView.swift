@@ -76,4 +76,10 @@ final class MapView: UIView {
         
         mapView.addAnnotation(pin)
     }
+    
+    func moveLoaction(location: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: location,
+                                        span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+        mapView.setRegion(region, animated: true)
+    }
 }
