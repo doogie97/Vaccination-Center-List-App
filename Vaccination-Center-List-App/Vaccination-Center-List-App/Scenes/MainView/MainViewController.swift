@@ -82,6 +82,13 @@ final class MainViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        mainView.scrollToTopButton.rx.tap
+            .withUnretained(self)
+            .bind(onNext: { owner, _ in
+                owner.mainView.listCollectionView.setContentOffset(.zero, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.showDetailView
             .withUnretained(self)
             .bind(onNext: { owner, vaccinationInfo in
