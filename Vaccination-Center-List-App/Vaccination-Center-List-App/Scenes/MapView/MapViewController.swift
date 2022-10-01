@@ -68,6 +68,14 @@ final class MapViewController: UIViewController {
             }
             .disposed(by: diseposeBag)
         
+        
+        viewModel.showBasicAlert
+            .withUnretained(self)
+            .bind(onNext: { owner, messege in
+                owner.showAlert(messege: messege)
+            })
+            .disposed(by: diseposeBag)
+        
         viewModel.moveToLocation
             .withUnretained(self)
             .bind(onNext: {owner, location in

@@ -22,6 +22,7 @@ protocol MapViewModelOutput {
     var moveToLocation: PublishRelay<CLLocationCoordinate2D> { get }
     var requestAuthorization: PublishRelay<Void> { get }
     var requestLocation: PublishRelay<Void> { get }
+    var showBasicAlert: PublishRelay<String> { get }
 }
 
 final class MapViewModel: MapViewModelable {
@@ -46,7 +47,7 @@ final class MapViewModel: MapViewModelable {
         case .authorizedAlways, .authorizedWhenInUse:
             requestLocation.accept(())
         default:
-            print("알수없는오류 띄우기")
+            showBasicAlert.accept("알 수 없는 오류 발생")
         }
     }
     
@@ -65,4 +66,5 @@ final class MapViewModel: MapViewModelable {
     let moveToLocation = PublishRelay<CLLocationCoordinate2D>()
     let requestAuthorization = PublishRelay<Void>()
     let requestLocation = PublishRelay<Void>()
+    let showBasicAlert = PublishRelay<String>()
 }
