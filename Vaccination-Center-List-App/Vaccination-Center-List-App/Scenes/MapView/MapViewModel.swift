@@ -19,6 +19,7 @@ protocol MapViewModelOutput {
     var centerName: String { get }
     var location: CLLocationCoordinate2D { get }
     var moveToLocation: PublishRelay<CLLocationCoordinate2D> { get }
+    var requestAuthorization: PublishRelay<Void> { get }
 }
 
 final class MapViewModel: MapViewModelable {
@@ -42,4 +43,5 @@ final class MapViewModel: MapViewModelable {
     let centerName: String
     let location: CLLocationCoordinate2D
     let moveToLocation = PublishRelay<CLLocationCoordinate2D>()
+    let requestAuthorization = PublishRelay<Void>()
 }

@@ -54,6 +54,13 @@ final class MapViewController: UIViewController {
             })
             .disposed(by: diseposeBag)
         
+        viewModel.requestAuthorization
+            .withUnretained(self)
+            .bind { owner, _ in
+                owner.locationManager.requestWhenInUseAuthorization()
+            }
+            .disposed(by: diseposeBag)
+        
         viewModel.moveToLocation
             .withUnretained(self)
             .bind(onNext: {owner, location in
