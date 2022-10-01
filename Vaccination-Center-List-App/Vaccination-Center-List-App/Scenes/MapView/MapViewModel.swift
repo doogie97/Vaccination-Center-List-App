@@ -13,6 +13,7 @@ protocol MapViewModelable: MapViewModelInput, MapViewModelOutput {}
 protocol MapViewModelInput {
     func touchToVaccinationButton()
     func touchToCurrentLocationButton(_ authorization: CLAuthorizationStatus)
+    func receiveCurrentLocation(_ location: CLLocation?)
 }
 
 protocol MapViewModelOutput {
@@ -46,6 +47,15 @@ final class MapViewModel: MapViewModelable {
         default:
             print("알수없는오류 띄우기")
         }
+    }
+    
+    func receiveCurrentLocation(_ location: CLLocation?) {
+        guard let location = location else {
+            return
+        }
+
+        moveToLocation.accept(CLLocationCoordinate2D(latitude: location.coordinate.latitude,
+                                                     longitude: location.coordinate.longitude))
     }
     
     //output
