@@ -43,8 +43,9 @@ final class DetailView: UIView {
     
     //make methods
     private func makeSectionView(imageName: String, titleText: String, descriptionLabel: UILabel, shwdowWith: CGFloat? = nil) -> UIView {
-        let imageView = UIImageView(image: UIImage(named: imageName))
+        let imageView = UIImageView(image: UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate))
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .iconColor
         
         let titleTextLabel = UILabel()
         titleTextLabel.text = titleText

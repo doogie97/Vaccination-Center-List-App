@@ -43,6 +43,7 @@
 		ACCCB0AC28E5208300839046 /* VaccinationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */; };
 		ACE4618128E7F8A9008BD36B /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE4618028E7F8A9008BD36B /* UIViewController + Extension.swift */; };
 		ACE4618328E800C7008BD36B /* Error + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE4618228E800C7008BD36B /* Error + Extension.swift */; };
+		ACE4618528E805B5008BD36B /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE4618428E805B5008BD36B /* UIColor + Extension.swift */; };
 		C554819C6FA15E8ABA4D491D /* Pods_Vaccination_Center_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationListCell.swift; sourceTree = "<group>"; };
 		ACE4618028E7F8A9008BD36B /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		ACE4618228E800C7008BD36B /* Error + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error + Extension.swift"; sourceTree = "<group>"; };
+		ACE4618428E805B5008BD36B /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				AC036A5328E6A9A200FB28AD /* UIView + Extension.swift */,
 				ACE4618028E7F8A9008BD36B /* UIViewController + Extension.swift */,
 				ACE4618228E800C7008BD36B /* Error + Extension.swift */,
+				ACE4618428E805B5008BD36B /* UIColor + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				AC036A5428E6A9A200FB28AD /* UIView + Extension.swift in Sources */,
 				ACC7790F28E2DBA9000EDA2F /* URLSessionProtocol.swift in Sources */,
 				ACC778FE28E2D58C000EDA2F /* MainViewController.swift in Sources */,
+				ACE4618528E805B5008BD36B /* UIColor + Extension.swift in Sources */,
 				ACB9337528E43F8A00AC462E /* VaccinationInfo.swift in Sources */,
 				ACC7791C28E2E8DB000EDA2F /* VaccinationCenterListApp++Bundle.swift in Sources */,
 				AC036A5928E6C38300FB28AD /* MapViewModel.swift in Sources */,
