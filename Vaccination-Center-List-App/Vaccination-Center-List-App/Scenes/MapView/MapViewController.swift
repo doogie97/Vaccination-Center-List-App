@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import CoreLocation
 
 final class MapViewController: UIViewController {
     private let viewModel: MapViewModelable
@@ -21,6 +22,7 @@ final class MapViewController: UIViewController {
     
     private let mapView = MapView()
     private let diseposeBag = DisposeBag()
+    private let locationManager = CLLocationManager()
     
     override func loadView() {
         self.view = mapView
@@ -32,6 +34,9 @@ final class MapViewController: UIViewController {
         bindView()
         mapView.setLocationPin(location: viewModel.location, title: viewModel.centerName)
         mapView.moveLoaction(location: viewModel.location)
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
     private func bindView() {
@@ -61,4 +66,7 @@ final class MapViewController: UIViewController {
         self.title = "지도"
         self.navigationItem.leftBarButtonItem?.title = "Back"
     }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
 }
