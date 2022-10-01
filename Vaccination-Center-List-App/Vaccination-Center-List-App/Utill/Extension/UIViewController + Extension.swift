@@ -16,4 +16,19 @@ extension UIViewController {
         self.present(alert, animated: true)
     }
     
+    func goSettingAlert(title: String, messege: String) {
+        let alert = UIAlertController(title: title, message: messege, preferredStyle: .alert)
+        let settingAction = UIAlertAction(title: "설정", style: .default) { _ in
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(settingAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
 }
