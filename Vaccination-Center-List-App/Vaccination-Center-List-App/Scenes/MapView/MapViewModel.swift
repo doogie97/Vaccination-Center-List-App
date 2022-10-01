@@ -23,6 +23,7 @@ protocol MapViewModelOutput {
     var requestAuthorization: PublishRelay<Void> { get }
     var requestLocation: PublishRelay<Void> { get }
     var showBasicAlert: PublishRelay<String> { get }
+    var showSettingAlert: PublishRelay<(title: String, messege: String)> { get }
 }
 
 final class MapViewModel: MapViewModelable {
@@ -43,7 +44,7 @@ final class MapViewModel: MapViewModelable {
         case .notDetermined:
             requestAuthorization.accept(())
         case .restricted, .denied:
-            print("권한 허용해달라고 얼럿 띄우기")
+            showSettingAlert.accept((title: "위치 권한 요청", messege: "현재 위치를 사용하기 위해 위치 권한이 필요합니다"))
         case .authorizedAlways, .authorizedWhenInUse:
             requestLocation.accept(())
         default:
@@ -67,4 +68,5 @@ final class MapViewModel: MapViewModelable {
     let requestAuthorization = PublishRelay<Void>()
     let requestLocation = PublishRelay<Void>()
     let showBasicAlert = PublishRelay<String>()
+    let showSettingAlert = PublishRelay<(title: String, messege: String)>()
 }
