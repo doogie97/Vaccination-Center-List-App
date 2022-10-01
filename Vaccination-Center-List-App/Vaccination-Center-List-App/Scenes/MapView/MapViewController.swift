@@ -64,6 +64,7 @@ final class MapViewController: UIViewController {
         viewModel.requestLocation
             .withUnretained(self)
             .bind { owner, _ in
+                owner.locationManager.startUpdatingLocation()
                 owner.viewModel.receiveCurrentLocation(owner.locationManager.location)
             }
             .disposed(by: diseposeBag)
@@ -96,5 +97,4 @@ final class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: CLLocationManagerDelegate {
-}
+extension MapViewController: CLLocationManagerDelegate {}
