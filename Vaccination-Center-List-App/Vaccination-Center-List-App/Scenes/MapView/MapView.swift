@@ -20,6 +20,7 @@ final class MapView: UIView {
     
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
+        mapView.showsUserLocation = true
         
         return mapView
     }()
