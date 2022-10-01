@@ -41,5 +41,5 @@ final class MapViewModel: MapViewModelable {
     //output
     let centerName: String
     let location: CLLocationCoordinate2D
-    var moveToLocation = PublishRelay<CLLocationCoordinate2D>()
+    let moveToLocation = PublishRelay<CLLocationCoordinate2D>()
 }
