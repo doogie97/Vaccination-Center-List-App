@@ -41,6 +41,7 @@
 		ACCA0CAF28E5A55C00189D83 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCA0CAE28E5A55C00189D83 /* DetailViewModel.swift */; };
 		ACCCB0AA28E51E9000839046 /* UINavigationBar + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */; };
 		ACCCB0AC28E5208300839046 /* VaccinationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */; };
+		ACE4618128E7F8A9008BD36B /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE4618028E7F8A9008BD36B /* UIViewController + Extension.swift */; };
 		C554819C6FA15E8ABA4D491D /* Pods_Vaccination_Center_List_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47888BD72C81CFAB94031814 /* Pods_Vaccination_Center_List_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		ACCA0CAE28E5A55C00189D83 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar + Extension.swift"; sourceTree = "<group>"; };
 		ACCCB0AB28E5208300839046 /* VaccinationListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationListCell.swift; sourceTree = "<group>"; };
+		ACE4618028E7F8A9008BD36B /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				ACCCB0A928E51E9000839046 /* UINavigationBar + Extension.swift */,
 				ACB233D228E53F8000D6D6E0 /* String + Extension.swift */,
 				AC036A5328E6A9A200FB28AD /* UIView + Extension.swift */,
+				ACE4618028E7F8A9008BD36B /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				ACCCB0AC28E5208300839046 /* VaccinationListCell.swift in Sources */,
 				AC036A5728E6C37700FB28AD /* MapViewController.swift in Sources */,
 				ACC4FC5E28E3F57500C6A9E1 /* APIError.swift in Sources */,
+				ACE4618128E7F8A9008BD36B /* UIViewController + Extension.swift in Sources */,
 				ACCA0CAB28E5A53100189D83 /* DetailViewController.swift in Sources */,
 				ACC778FA28E2D58C000EDA2F /* AppDelegate.swift in Sources */,
 				ACCA0CAF28E5A55C00189D83 /* DetailViewModel.swift in Sources */,
