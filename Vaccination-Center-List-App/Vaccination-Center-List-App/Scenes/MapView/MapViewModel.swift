@@ -21,6 +21,7 @@ protocol MapViewModelOutput {
     var location: CLLocationCoordinate2D { get }
     var moveToLocation: PublishRelay<CLLocationCoordinate2D> { get }
     var requestAuthorization: PublishRelay<Void> { get }
+    var requestLocation: PublishRelay<Void> { get }
 }
 
 final class MapViewModel: MapViewModelable {
@@ -43,7 +44,7 @@ final class MapViewModel: MapViewModelable {
         case .restricted, .denied:
             print("권한 허용해달라고 얼럿 띄우기")
         case .authorizedAlways, .authorizedWhenInUse:
-            print("위치 요청하기")
+            requestLocation.accept(())
         default:
             print("알수없는오류 띄우기")
         }
@@ -63,4 +64,5 @@ final class MapViewModel: MapViewModelable {
     let location: CLLocationCoordinate2D
     let moveToLocation = PublishRelay<CLLocationCoordinate2D>()
     let requestAuthorization = PublishRelay<Void>()
+    let requestLocation = PublishRelay<Void>()
 }
