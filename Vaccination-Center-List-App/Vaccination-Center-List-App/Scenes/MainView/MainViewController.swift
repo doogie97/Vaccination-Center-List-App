@@ -33,9 +33,9 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         setNavigation()
         bindView()
+        viewModel.viewDidLoad()
         mainView.listCollectionView.refreshControl = refreshController
     }
     
@@ -95,6 +95,13 @@ final class MainViewController: UIViewController {
                 let detailVC = owner.container.detailViewController(vaccinationInfo: vaccinationInfo)
                 
                 owner.navigationController?.pushViewController(detailVC, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.showAlert
+            .withUnretained(self)
+            .bind(onNext: { owner, message in
+                owner.showAlert(messege: message)
             })
             .disposed(by: disposeBag)
     }

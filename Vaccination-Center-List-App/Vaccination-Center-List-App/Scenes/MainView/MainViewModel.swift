@@ -19,6 +19,7 @@ protocol MainViewModelableInput {
 protocol MainViewModelableOutput {
     var vaccinations: BehaviorRelay<[VaccinationInfo]> { get }
     var showDetailView: PublishRelay<VaccinationInfo> { get }
+    var showAlert: PublishRelay<String> { get }
 }
 
 final class MainViewModel: MainViewModelable {
@@ -54,6 +55,7 @@ final class MainViewModel: MainViewModelable {
     //out
     let vaccinations = BehaviorRelay<[VaccinationInfo]>(value: [])
     let showDetailView = PublishRelay<VaccinationInfo>()
+    let showAlert = PublishRelay<String>()
 }
 
 extension MainViewModel {
@@ -74,10 +76,10 @@ extension MainViewModel {
                     
                     self?.vaccinations.accept(newVaccinations)
                 } catch let error{
-                    print(error) //추후 에러처리 필요
+                    self?.showAlert.accept(error.errorMessage)
                 }
             case .failure(let error):
-                print(error) //추후 에러처리 필요
+                self?.showAlert.accept(error.errorMessage)
             }
         }
     }
