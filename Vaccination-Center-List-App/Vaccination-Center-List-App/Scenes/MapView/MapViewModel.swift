@@ -12,7 +12,7 @@ protocol MapViewModelable: MapViewModelInput, MapViewModelOutput {}
 
 protocol MapViewModelInput {
     func touchToVaccinationButton()
-    func touchToCurrentLocationButton()
+    func touchToCurrentLocationButton(_ authorization: CLAuthorizationStatus)
 }
 
 protocol MapViewModelOutput {
@@ -35,8 +35,17 @@ final class MapViewModel: MapViewModelable {
         moveToLocation.accept(location)
     }
     
-    func touchToCurrentLocationButton() {
-        
+    func touchToCurrentLocationButton(_ authorization: CLAuthorizationStatus) {
+        switch authorization {
+        case .notDetermined:
+            requestAuthorization.accept(())
+        case .restricted, .denied:
+            print("권한 허용해달라고 얼럿 띄우기")
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("위치 요청하기")
+        default:
+            print("알수없는오류 띄우기")
+        }
     }
     
     //output

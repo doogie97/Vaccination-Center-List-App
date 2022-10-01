@@ -50,7 +50,7 @@ final class MapViewController: UIViewController {
         mapView.toCurrentLocationButton.rx.tap
             .withUnretained(self)
             .bind(onNext: { owner, _ in
-                owner.viewModel.touchToCurrentLocationButton()
+                owner.viewModel.touchToCurrentLocationButton(owner.locationManager.authorizationStatus)
             })
             .disposed(by: diseposeBag)
         
